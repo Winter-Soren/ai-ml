@@ -86,8 +86,16 @@ A decision tree is a predictive modeling tool that maps observations about an it
 
 11. **Explanation in layman's terms :** Imagine you have a fruit basket with different fruits. To identify each fruit, you start with a question like "Is it round?" If yes, you ask another question like "Is it red?" If no, you might ask "Is it yellow?" This process continues until you reach a conclusion, like "It's an apple." Each question and answer form a branch in the decision tree, helping you classify the fruit.
 
+12.**How probability is used :** Probability is often used to estimate the likelihood of different outcomes at each node. The algorithm makes decisions by evaluating features and splitting data into subsets based on certain conditions. At each decision node, probabilities are assigned to potential outcomes, and the algorithm chooses the path with the highest probability. 
+    - For example, in classification tasks, decision trees may assign probabilities to different classes for a given set of features. The path with the highest probability becomes the predicted class. In regression tasks, decision trees might estimate the probability distribution of the target variable at each leaf node.
 
+    - Probability helps decision trees make informed choices at each step, leading to a structured decision-making process in machine learning models.
 
+13. **Explanation of usage of Probability in layman's term :** Imagine decision trees as a flowchart for making decisions. Each step in the flowchart is a question about something, like "Is it raining?" or "Is it sunny?" The answers to these questions lead you down different paths.
+
+    - Now, instead of just saying "yes" or "no" at each step, decision trees use probability to say how likely something is. For example, if the question is "Will it rain tomorrow?" the tree might say there's a 70% chance of rain and a 30% chance of no rain.
+
+    - So, decision trees help us make choices by considering the likelihood of different outcomes at each step. It's like playing a game and deciding the best move based on the chances of winning or losing.
 
 <hr>
 
