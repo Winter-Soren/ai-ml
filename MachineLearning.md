@@ -10,8 +10,8 @@
 * [Support Vector Machine](#support-vector-machine)
 * [K-Nearest Neighbors](#k-nearest-neighbors) <!-- done -->
 * [K-Means](#k-means) <!-- done -->
-   * [Difference between K-Means and KNN](#difference-between-k-means-and-knn)
-* [Naive Bayes](#naive-bayes)
+   * [Difference between K-Means and KNN](#difference-between-k-means-and-knn) <!-- done -->
+* [Naive Bayes](#naive-bayes) <!-- done -->
 * [Principal Component Analysis](#principal-component-analysis)
 * [Gradient Boosting](#gradient-boosting)
 * [Reinforcement Learning](#reinforcement-learning)
@@ -185,7 +185,6 @@ A decision tree is a predictive modeling tool that maps observations about an it
 
 ### K-Means
 
-
 1. **Definition:** K-means is a partitioning clustering algorithm that divides a dataset into K distinct, non-overlapping subsets (clusters). It assigns data points to clusters based on their similarity, with the goal of minimizing the within-cluster sum of squares.
 
 2. **Clustering :** Clustering is an unsupervised learning technique where the algorithm groups similar data points into clusters based on certain criteria. In K-means, the criterion is the minimization of the sum of squared distances within each cluster.
@@ -265,4 +264,64 @@ A decision tree is a predictive modeling tool that maps observations about an it
 | K-means does not directly involve probabilities. | KNN uses probabilities to make predictions. |
 | K-means does not require re-training with new data. | KNN requires re-training with new data. |
 
+
 <hr>
+
+
+### Naive Bayes
+
+1. **Definition:** Naive Bayes is a probabilistic machine learning algorithm that is based on Bayes' theorem. It is particularly useful for classification tasks, and it makes the assumption that the features used to describe instances are conditionally independent given the class. It uses posterior probability to make predictions. 
+
+`Posterior Probability` The probability of an event occurring given that another event has already occurred.
+
+2. **Bayes' Theorem:**
+Bayes' theorem calculates the probability of a hypothesis (class) given the evidence (features) using the formula:
+
+$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)} $
+
+where:
+- $P(A|B) $ is the probability of A given B.
+- $P(B|A)$ is the probability of B given A.
+- $P(A)$ and $P(B)$ are the probabilities of A and B independently.
+
+3. **Construction Process:**
+- **Training:**
+   - **Calculate Class Priors $P(C) $:** Determine the prior probability of each class in the training dataset.
+   - **Calculate Class-Feature Probabilities $P(F_i|C) $:** Estimate the probability of each feature given each class. This involves calculating the likelihood of each feature occurring in instances of each class.
+   - **Calculate Marginal Probability $P(F_i) $:** Determine the marginal probability of each feature across all classes.
+
+- **Prediction:**
+   - **Calculate Posterior Probabilities $P(C|F) $:** Using Bayes' theorem, calculate the probability of each class given the observed features.
+   - **Predict the Class:** Assign the class with the highest posterior probability as the predicted class.
+
+4. **Type:**
+Naive Bayes is a supervised learning algorithm primarily used for classification tasks. It is based on the principle of Bayesian probability and conditional independence.
+
+5. **Reasons to Use Naive Bayes:**
+   - **Efficiency:** Naive Bayes is computationally efficient and can handle large datasets.
+   - **Simple Assumption:** Despite its "naive" assumption of feature independence, Naive Bayes often performs well in practice.
+   - **Well-suited for Text Classification:** Particularly effective for text classification tasks such as spam detection and sentiment analysis.
+
+6. **Pros:**
+   - **Simplicity:** Naive Bayes is simple to implement and requires minimal training data.
+   - **Fast Training and Prediction:** Computationally efficient, making it suitable for real-time applications.
+   - **Effective for High-Dimensional Data:** Performs well with a large number of features.
+   - **Robust to Irrelevant Features:** Irrelevant features have little to no effect on performance.
+   - **Uses posterior probability:** Uses posterior probability to make predictions, which is useful for ranking predictions.
+
+7. **Cons:**
+   - **Assumption of Independence:** The assumption that features are conditionally independent might not hold in some real-world scenarios.
+   - **Sensitive to Irrelevant Features:** It can be sensitive to irrelevant features.
+   - **Estimation of Probabilities:** If a particular feature value does not appear in the training set with a certain class, the estimated probability for that feature-class combination will be zero.
+
+8. **Improvements Over Previous Models:** Naive Bayes is not a model that has direct "predecessors" in the same way some algorithms build on previous versions. However, its simplicity and efficiency make it a popular baseline model for comparison with more complex algorithms.
+
+9. **Significance of Bayesian Inference:** Bayesian inference is a principled way to update probabilities based on new evidence. In the context of Naive Bayes, it allows the model to iteratively update the probability of each class given observed features.
+
+10. **Use of Probability in Naive Bayes:** Probability is fundamental to Naive Bayes. The algorithm calculates the probabilities of observing features given each class during training, and during prediction, it uses Bayes' theorem to calculate the probability of each class given the observed features.
+
+11. **Handling Continuous and Categorical Features:** Naive Bayes can handle both continuous and categorical features. For continuous features, it typically assumes a normal distribution, and for categorical features, it estimates probabilities based on observed frequencies.
+
+
+<hr>
+
