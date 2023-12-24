@@ -6,10 +6,10 @@
 * [Linear Regression](#linear-regression) <!-- done -->
 * [Logistic Regression](#logistic-regression)
 * [Decision Tree](#decision-tree) <!-- done -->
-* [Random Forest](#random-forest)
+* [Random Forest](#random-forest) <!-- done -->
 * [Support Vector Machine](#support-vector-machine)
 * [K-Nearest Neighbors](#k-nearest-neighbors) <!-- done -->
-* [K-Means](#k-means)
+* [K-Means](#k-means) <!-- done -->
 * [Naive Bayes](#naive-bayes)
 * [Principal Component Analysis](#principal-component-analysis)
 * [Gradient Boosting](#gradient-boosting)
@@ -144,6 +144,7 @@ A decision tree is a predictive modeling tool that maps observations about an it
 <hr>
 
 ### k-Nearest Neighbors
+
 1. **Definition:** k-Nearest Neighbors is a supervised machine learning algorithm for classification or regression.
 
 2. The k-nearest neighbors algorithm (k-NN) is a non-parametric method used for classification and regression. In both cases, the input consists of the k closest training examples in the feature space. The output depends on whether k-NN is used for classification or regression:
@@ -178,3 +179,73 @@ A decision tree is a predictive modeling tool that maps observations about an it
 12. **Explanation in layman's terms:** The k-nearest neighbors algorithm is based on the simple idea of predicting unknown values by matching them with the most similar known values. The algorithm creates a model by finding the k most similar records to a given record and then making an estimate based on the known output values of those records. The similarity of two records is determined using a distance function.
 
 13. **Type of model or architecture:** The k-nearest neighbors algorithm is a non-parametric method used for classification and regression. In both cases, the input consists of the k closest training examples in the feature space. The output depends on whether k-NN is used for classification or regression.
+
+<hr>
+
+### K-Means
+
+
+1. **Definition:** K-means is a partitioning clustering algorithm that divides a dataset into K distinct, non-overlapping subsets (clusters). It assigns data points to clusters based on their similarity, with the goal of minimizing the within-cluster sum of squares.
+
+2. **Clustering :** Clustering is an unsupervised learning technique where the algorithm groups similar data points into clusters based on certain criteria. In K-means, the criterion is the minimization of the sum of squared distances within each cluster.
+
+3. **Construction Process:**
+   - **Initialization:** Randomly select K data points as initial cluster centroids.
+   - **Assignment:** Assign each data point to the cluster whose centroid is closest (usually using Euclidean distance).
+   - **Update Centroids:** Recalculate the centroids of the clusters based on the current assignment.
+   - **Repeat:** Repeat steps 2 and 3 until convergence (when centroids do not change significantly) or a specified number of iterations.
+
+4. **Type :** K-means is an unsupervised learning algorithm. It does not rely on labeled data but instead identifies patterns and structure within the data based on the inherent relationships between data points.
+
+5. **Value of K :** The value of K in K-means represents the number of clusters the algorithm aims to identify in the data. Determining the optimal value of K is a crucial step in the process. Several methods can be employed, including the Elbow Method and the Silhouette Method.
+
+   - **Elbow Method:** Plot the within-cluster sum of squares (WCSS) for different values of K. The "elbow" in the plot is often a good indicator of the optimal K, where adding more clusters does not significantly reduce WCSS.
+
+   - **Silhouette Method:** Evaluate the silhouette score for different K values. The silhouette score measures how similar an object is to its own cluster compared to other clusters. A higher silhouette score indicates a better-defined separation of clusters.
+
+6. **Training Process:**
+   - **Initialization:** Randomly select K data points from the dataset as initial centroids.
+   - **Assignment:** Assign each data point to the cluster whose centroid is closest (using a distance metric like Euclidean distance).
+   - **Update Centroids:** Recalculate the centroids of the clusters based on the current assignment.
+   - **Repeat Steps 2 and 3:** Iterate between assignment and centroid updates until convergence (when centroids do not change significantly) or a specified number of iterations.
+
+7. **Data Processing During Training:**
+   - **Initialization:** Randomly selecting initial centroids.
+   - **Assignment Step:** Calculating distances (often Euclidean) between data points and centroids, assigning each point to the nearest cluster.
+   - **Update Centroids Step:** Recalculating cluster centroids based on the mean of the data points assigned to each cluster.
+
+8. **Prediction (Inference) for New Data:** When new data points need to be assigned to clusters after the model is trained:
+
+   - **Calculate Distances:** Measure the distance between each new data point and the existing cluster centroids.
+   - **Assign to Nearest Cluster:** Assign the new data point to the cluster with the closest centroid.
+   - **No Re-training:** Unlike supervised learning models, K-means does not need to be re-trained with new data. The centroids obtained during the training phase are used to assign new data points.
+
+9. **Considerations:**
+   - **Centroid Stability:** The stability of centroids is crucial. If centroids change significantly between training and prediction, it may indicate that the model needs to be re-trained.
+   - **Feature Scaling:** K-means is sensitive to the scale of features. It's common practice to normalize or standardize features to ensure equal contribution during distance calculations.
+
+
+10. **Reasons to Use K-means:**
+      - **Pattern Discovery:** K-means is used for identifying inherent patterns or structures within data.
+      - **Data Compression:** It can be used for data compression by representing data points with cluster centroids.
+      - **Anomaly Detection:** Outliers may appear as separate clusters, aiding in anomaly detection.
+
+11. **Pros:**
+      - **Simplicity:** K-means is easy to understand and implement.
+      - **Efficiency:** It is computationally efficient, especially for large datasets.
+      - **Versatility:** Applicable to a wide range of data types and structures.
+
+12. **Cons:**
+      - **Sensitivity to Initial Centroids:** The algorithm's performance can be sensitive to the initial selection of centroids.
+      - **Assumes Spherical Clusters:** K-means assumes that clusters are spherical and equally sized.
+      - **Requires Pre-specification of K:** The number of clusters (K) must be known or estimated beforehand.
+
+13. **Improvements Over Previous Models :** K-means is a classic clustering algorithm that has been widely used due to its simplicity. While it may have limitations, various modifications, such as K-means++, have been introduced to address the sensitivity to initial centroids.
+
+14. **Significance of Minimizing Within-Cluster Sum of Squares :** The objective of K-means is to minimize the sum of squared distances within each cluster. This is significant because it ensures that data points within a cluster are close to the cluster centroid, promoting homogeneity within clusters and separation between them.
+
+15. **Use of Probability in K-means :** K-means does not directly involve probabilities. However, during the assignment step, the distance metric (often Euclidean distance) can be interpreted as a measure of dissimilarity or "unlikelihood" of a point belonging to a certain cluster.
+
+16. **Connection to Feature Scaling :** Since K-means uses distances, it is sensitive to the scale of features. Feature scaling (normalizing or standardizing features) is often applied to ensure that all features contribute equally to the similarity measurement.
+
+<hr>
