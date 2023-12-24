@@ -10,6 +10,7 @@
 * [Support Vector Machine](#support-vector-machine)
 * [K-Nearest Neighbors](#k-nearest-neighbors) <!-- done -->
 * [K-Means](#k-means) <!-- done -->
+   * [Difference between K-Means and KNN](#difference-between-k-means-and-knn)
 * [Naive Bayes](#naive-bayes)
 * [Principal Component Analysis](#principal-component-analysis)
 * [Gradient Boosting](#gradient-boosting)
@@ -247,5 +248,21 @@ A decision tree is a predictive modeling tool that maps observations about an it
 15. **Use of Probability in K-means :** K-means does not directly involve probabilities. However, during the assignment step, the distance metric (often Euclidean distance) can be interpreted as a measure of dissimilarity or "unlikelihood" of a point belonging to a certain cluster.
 
 16. **Connection to Feature Scaling :** Since K-means uses distances, it is sensitive to the scale of features. Feature scaling (normalizing or standardizing features) is often applied to ensure that all features contribute equally to the similarity measurement.
+
+<hr>
+
+### Difference between K-Means and KNN
+<!-- tabular format -->
+| K-Means | KNN |
+| --- | --- |
+| K-means is a clustering algorithm that divides a dataset into K distinct, non-overlapping subsets (clusters). | KNN is a supervised machine learning algorithm that can be used for both classification and regression tasks. |
+| K-means is an unsupervised learning algorithm. It does not rely on labeled data but instead identifies patterns and structure within the data based on the inherent relationships between data points. | KNN is a supervised learning algorithm. It relies on labeled data to make predictions. |
+| K-means is used for identifying inherent patterns or structures within data. | KNN is used for classification and regression tasks. |
+| K-means is computationally efficient, especially for large datasets. | KNN is computationally expensive, especially for large datasets. |
+| K-means is sensitive to the initial selection of centroids. | KNN is sensitive to outliers and the scale of the data. |
+| K-means assumes that clusters are spherical and equally sized. | KNN assumes that similar data points are close to each other. |
+| The number of clusters (K) must be known or estimated beforehand. | The value of K must be known beforehand. |
+| K-means does not directly involve probabilities. | KNN uses probabilities to make predictions. |
+| K-means does not require re-training with new data. | KNN requires re-training with new data. |
 
 <hr>
