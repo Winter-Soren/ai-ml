@@ -12,10 +12,11 @@
 * [K-Means](#k-means) <!-- done -->
    * [Difference between K-Means and KNN](#difference-between-k-means-and-knn) <!-- done -->
 * [Naive Bayes](#naive-bayes) <!-- done -->
-* [Principal Component Analysis](#principal-component-analysis)
 * [Gradient Boosting](#gradient-boosting)
-* [Reinforcement Learning](#reinforcement-learning)
 * [Dimensionality Reduction](#dimensionality-reduction)
+   * [Principal Component Analysis](#principal-component-analysis)
+   * [Independent Component Analysis](#independent-component-analysis)
+   * [Clustering](#clustering)
 * [Model Selection](#model-selection)
 * [Ensemble Learning](#ensemble-learning)
 * [Bias-Variance Tradeoff](#bias-variance-tradeoff)
@@ -27,8 +28,8 @@
 * [Bagging](#bagging)
 * [Boosting](#boosting)
 * [Gradient Descent](#gradient-descent)
-
 <!-- indexstop -->
+
 <hr>
 
 ### Linear Regression
@@ -44,6 +45,10 @@
 1. **Definition:** A decision tree is a decision support tool that uses a tree-like model of decisions and their possible consequences, including chance event outcomes, resource costs, and utility.
 
 A decision tree is a predictive modeling tool that maps observations about an item to conclusions about the item's target value. It is a tree-like model where an internal node represents a test on an attribute, each branch represents the outcome of the test, and each leaf node represents the predicted target value.
+
+<p align="center">
+  <img src="https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/cdp/cf/ul/g/ce/ed/ICLH_Diagram_Batch_03_24A-AI-ML-DecisionTree.png" alt="Decision Tree" width="70%" height="450">
+</p>
 
 2. **Description:** Decision trees are a non-linear model used for both classification and regression tasks. They partition the data recursively based on feature values to make decisions.
 
@@ -105,6 +110,11 @@ A decision tree is a predictive modeling tool that maps observations about an it
 
 1. **Definition :** A Random Forest is an ensemble learning method that builds a collection of decision trees during training and outputs the mode (classification) or average prediction (regression) of the individual trees. It's called a "forest" because it consists of a multitude of trees.
 
+<div align="center">
+  <img src="https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/cdp/cf/ul/g/50/f9/ICLH_Diagram_Batch_03_27-RandomForest.component.simple-narrative-xl.ts=1698245878055.png/content/adobe-cms/us/en/topics/random-forest/jcr:content/root/table_of_contents/body/content_section_styled/content-section-body/simple_narrative0/image" alt="Decision Tree" width="70%" height="450">
+</div>
+
+
 2. **Ensemble Learning :** Ensemble learning involves combining multiple models to create a stronger and more robust model. In the case of Random Forest, the individual models are decision trees.
 
 3. **Construction Process:**
@@ -148,6 +158,11 @@ A decision tree is a predictive modeling tool that maps observations about an it
 
 1. **Definition:** k-Nearest Neighbors is a supervised machine learning algorithm for classification or regression.
 
+<div align="center" style="background-color: white;">
+  <img src="https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/cdp/cf/ul/g/ef/3a/KNN.component.complex-narrative-xl.ts=1698405522573.png/content/adobe-cms/us/en/topics/knn/jcr:content/root/table_of_contents/body/content_section_styled/content-section-body/complex_narrative/items/content_group/image" alt="KNN" width="100%" height="500">
+</div>
+
+
 2. The k-nearest neighbors algorithm (k-NN) is a non-parametric method used for classification and regression. In both cases, the input consists of the k closest training examples in the feature space. The output depends on whether k-NN is used for classification or regression:
    - In k-NN classification, the output is a class membership. An object is classified by a majority vote of its neighbors, with the object being assigned to the class most common among its k nearest neighbors (k is a positive integer, typically small). If k = 1, then the object is simply assigned to the class of that single nearest neighbor.
    - In k-NN regression, the output is the property value for the object. This value is the average of the values of its k nearest neighbors.
@@ -186,6 +201,10 @@ A decision tree is a predictive modeling tool that maps observations about an it
 ### K-Means
 
 1. **Definition:** K-means is a partitioning clustering algorithm that divides a dataset into K distinct, non-overlapping subsets (clusters). It assigns data points to clusters based on their similarity, with the goal of minimizing the within-cluster sum of squares.
+
+<div align="center" >
+  <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*fz-rjYPPRlGEMdTI-RLbDg.png" alt="K-Means" width="70%" height="400">
+</div>
 
 2. **Clustering :** Clustering is an unsupervised learning technique where the algorithm groups similar data points into clusters based on certain criteria. In K-means, the criterion is the minimization of the sum of squared distances within each cluster.
 
@@ -321,7 +340,10 @@ Naive Bayes is a supervised learning algorithm primarily used for classification
 10. **Use of Probability in Naive Bayes:** Probability is fundamental to Naive Bayes. The algorithm calculates the probabilities of observing features given each class during training, and during prediction, it uses Bayes' theorem to calculate the probability of each class given the observed features.
 
 11. **Handling Continuous and Categorical Features:** Naive Bayes can handle both continuous and categorical features. For continuous features, it typically assumes a normal distribution, and for categorical features, it estimates probabilities based on observed frequencies.
-
-
 <hr>
+
+
+### Gradient Boosting
+
+
 
